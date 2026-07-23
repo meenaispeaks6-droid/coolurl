@@ -1,0 +1,65 @@
+/* StylePack — overrides neutral defaults from `index.css`.
+ *
+ * Token values are full OKLCH color strings. The @theme inline block in
+ * index.css maps these bare vars (--background, --primary, etc.) to
+ * Tailwind's --color-* namespace (--color-background, --color-primary).
+ *
+ * Imported by `src/main.tsx` AFTER `index.css` so these values win.
+ *
+ * To swap the pack: replace values here + update font links in index.html.
+ */
+
+:root {
+  /* Font families — swapped per style pack */
+  --font-heading: "Figtree", sans-serif;
+  --font-body: "Figtree", sans-serif;
+
+  /* Font weight defaults — overridable via TDP postMessage */
+  --font-heading-weight: 600;
+  --font-body-weight: 400;
+
+  /* Sky tint — primary color override */
+  --color-primary: oklch(0.588 0.158 241.966);
+  --color-primary-foreground: oklch(0.985 0 0);
+  --color-ring: oklch(0.588 0.158 241.966);
+  --color-sidebar-primary: oklch(0.588 0.158 241.966);
+  --color-sidebar-primary-foreground: oklch(0.985 0 0);
+  --color-sidebar-ring: oklch(0.588 0.158 241.966);
+}
+
+.dark {
+  --color-primary: oklch(0.746 0.16 232.661);
+  --color-primary-foreground: oklch(0.205 0 0);
+  --color-ring: oklch(0.746 0.16 232.661);
+  --color-sidebar-primary: oklch(0.746 0.16 232.661);
+  --color-sidebar-primary-foreground: oklch(0.205 0 0);
+  --color-sidebar-ring: oklch(0.746 0.16 232.661);
+}
+
+/* ── Body font (StylePack-aware) ─────────────────────────────── */
+
+body {
+  font-feature-settings: "ss01", "cv11";
+  text-rendering: optimizeLegibility;
+  text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  font-weight: var(--font-body-weight);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-heading-weight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

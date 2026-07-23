@@ -1,0 +1,1 @@
+TRUNCATE public.clicks CASCADE; TRUNCATE public.links CASCADE;
