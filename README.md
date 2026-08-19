@@ -1,5 +1,5 @@
 # Url shorter
-**Live app**: https://coolurl.lovable.app
+**Live app**: https://linkshort.meenai.in
 
 
 ## Development
